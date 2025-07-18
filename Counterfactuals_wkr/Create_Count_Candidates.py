@@ -640,7 +640,7 @@ def main(df_candidates, model_file, dataset_file, API_key_file, df_count, df_ori
                                 final_Counterfactuals = df_count.iloc[i]
                                 final_original_Mats = df_original.iloc[i]
                             else:
-                                final_Counterfactuals = pd.concat([final_Counterfactuals, df_count.iloc[i]], axis=0, ignore_index=True)
+                                final_Counterfactuals = pd.concat([final_Counterfactuals, df_count.iloc[i]], axis=1, ignore_index=True)
                                 final_original_Mats = pd.concat([final_original_Mats, df_original.iloc[i]], axis=1,ignore_index=True)
                                 
                         else:
@@ -654,11 +654,9 @@ def main(df_candidates, model_file, dataset_file, API_key_file, df_count, df_ori
             print('We go to the next material')
             continue
 
-    print(final_Counterfactuals)
-    print()
-    print()
-    print(final_original_Mats)
-    exit()
+    final_Counterfactuals = final_Counterfactuals.transpose()
+    final_original_Mats = final_original_Mats.transpose()
+    
     df_f_candidates = pd.DataFrame.from_dict(final_candidates)
 
     desired_range = [target - 0.1, target + 0.1]
