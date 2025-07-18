@@ -331,7 +331,7 @@ def _make_counterfactuals(model_data, features, X, Y, adsorbate, label_features,
 
     used_idxs = np.arange(X4Count.values.shape[0])
 
-    counterfactual = exp.generate_counterfactuals(X4Count[:100], total_CFs=4, desired_range=desired_range, features_to_vary=features2vary)
+    counterfactual = exp.generate_counterfactuals(X4Count, total_CFs=4, desired_range=desired_range, features_to_vary=features2vary)
 
     cfs_lists = counterfactual.visualize_as_dataframe(show_only_changes=True, print_dfs =False)
 
