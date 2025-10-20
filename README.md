@@ -1,6 +1,8 @@
 # HighHydrogenML-XAI
 Python routines developed within the Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowship HighHydrogenML (grant agreement 101105610) for the developed explainable artificial intelligence materials discovery and design strategy. Preprint available at https://chemrxiv.org/engage/chemrxiv/article-details/6876617523be8e43d6556edc
 
+Before using **XAI_Discovery.py**, the user needs to change the **counterfactual_explanations.py** file from the original dice_ml package with the one provided in this repository. For locating the path to the dice_ml package one can run the command _pip show dice_ml_.
+
 
 **ML_Eads.py**
 
